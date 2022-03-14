@@ -1,0 +1,15 @@
+h3{
+    
+    background-color: aquamarine;
+}
+
+.mydiv{
+    height: 0;
+ 
+    transition: all .6s;
+    background-color: green;
+    &.d-nones{
+      height: 100%;
+      padding: 15px;
+}
+}
