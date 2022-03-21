@@ -13,3 +13,13 @@ h3{
       padding: 15px;
 }
 }
+
+
+.mycsl{
+    opacity: 0;
+    transition: all .6s;
+    &.show{
+      opacity: 1;
+ 
+}
+}

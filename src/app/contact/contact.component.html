@@ -1,0 +1,39 @@
+<form action="" class="p-5 rounded shadow m-5" (ngSubmit)="getdata()">
+
+    <!-- <input type="text" class="form-control" name="" id="" #search  >
+    <button class="btn btn-danger" (click)="typing(search)">გაგზავნა</button> 
+<input type="text"  [(ngModel)]="title" name="title" required class="form-control" >
+<small   
+[style.borderColor]="title" 
+[style.borderWidth]="title.length + 'px'"
+[style.borderStyle]="'dashed'"
+
+*ngIf="title.invalid"
+
+>{{title}}</small>-->
+
+<input type="text" placeholder="ტექსტი" class="form-control mb-3" minlength="16" required   [formControl]="myname" >
+
+<small class="text-danger" *ngIf="myname.dirty && myname.invalid && myname.errors?.required">
+    სავალდებულო ველი
+</small>
+
+<small class="text-danger" *ngIf="myname.dirty && myname.invalid && myname.errors?.minlength">
+   მოცემული ველი უნდა შედგებოდეს მინიმუმ {{ myname.errors?.minlength.requiredLength}} სიმბოლოსგან
+</small>
+ 
+<small class="text-success" *ngIf="myname.dirty && myname.valid">
+   ოკ
+ </small>
+
+ <input type="text" placeholder="ელ:ფოსტა" class="form-control mb-3" name="" id=""   [formControl]="email" >
+ <textarea name="" id="" placeholder="სრული ტექსტი" class="form-control mb-3" cols="30" rows="10" [formControl]="text"></textarea>
+
+
+ <input type="text" *ngFor="let inp of Inputs" [formControl]="inp">
+
+ <button class="btn btn-info" > გაგზავნა</button>
+ <button class="btn btn-warning" (click)="nwfield()"> ველების შევსება</button>
+</form> 
+
+ 

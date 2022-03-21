@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit , Input,  Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,11 +7,24 @@ import { Component, OnInit , Input} from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
- @Input() logo = 'assets/Lays-Logo.png';
-
+   @Input() logo = 'assets/Lays-Logo.png';
+   @Output() users = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  passdat(value:string){
+    
+    this.users.emit('value');
+ 
+
+  }
+  showclas = false;
+
+  showbar(){
+   this.showclas = !this.showclas
+  }
+
+   
 }

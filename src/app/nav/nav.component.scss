@@ -8,3 +8,19 @@ nav {
         position: absolute;
     }
 }
+
+aside{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: blueviolet;
+    width: 350px;
+    max-width: 60vw;
+    transform: translateX(-100%);
+    transition: all .6s ease;
+
+    &.show{
+        transform: translateX(0);
+    }
+}

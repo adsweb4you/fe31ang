@@ -1,0 +1,13 @@
+input{
+    &:focus{
+        box-shadow: none;
+    }
+
+    // &.ng-valid{
+    //     border: 1px solid green;
+    // }
+
+    // &.ng-invalid{
+    //     border: 1px solid red;
+    // }
+}

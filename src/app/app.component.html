@@ -1,12 +1,10 @@
-<app-nav  [logo]="color"></app-nav>
+<app-nav (users)="changevals($event)"  ></app-nav>
  
-<div class="container">
-    sadd
-</div>
+ 
 
  <h1>{{title}}</h1>
 
- <h >{{ y  == 23 ? 'სწორია' : 'მცდარია'}} </h3>
+ <h3>{{ y  == 23 ? 'სწორია' : 'მცდარია'}} </h3>
 
  <button class="btn " (click)="changecolor('red')">ფერის შეცვლა (წითელი)</button>
  <button class="btn " (click)="changecolor('blue')">ფერის შეცვლა (ლურჯი)</button>
@@ -27,3 +25,35 @@
  </div>
 
  <button class="btn btn-info" (click)="toggle()">დამალვა/გამოჩენა</button>
+
+ <h3 class="mycsl text-center" *ngIf="virable; else elsblock" [ngClass]="clasbg"  [ngStyle]="styleobj">{{parents}}</h3>
+
+ <ng-template #elsblock>
+
+    <h1>ელს</h1>
+
+ </ng-template>
+
+ <div [ngSwitch]="lang">
+     <div *ngSwitchCase="'ka'">ka</div>
+     <div *ngSwitchCase="'en'">en</div>
+     <div *ngSwitchDefault>საწყისი</div>
+ </div>
+
+ <div class="col-lg-8 mx-auto">
+     <p *ngFor="let User of Users;  index  as  i ">
+       <span [ngClass]="{'text-success': User == 'ნიკა'}">{{User}} | {{i }} </span> 
+     </p>
+
+     <input type="text" class="form-control" #name>
+     <button class="btn btn-warning" (click)="newitem(name.value)"> ახალი ელემენტის ჩამატება </button>
+
+ </div>
+
+ <button class="btn btn-danger" (click)="changecl($event)">კლასის ცვლილება </button>
+
+ <div class="container">
+   <div class="col-lg-6 mx-auto">
+     <app-contact></app-contact>
+   </div>
+ </div>
