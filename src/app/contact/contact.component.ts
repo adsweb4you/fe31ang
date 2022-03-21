@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl , FormGroup} from '@angular/forms';
+import { FormControl , FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -55,5 +55,26 @@ export class ContactComponent implements OnInit {
      this.email.setValue('2')
      this.text.setValue('3')
   }
+
+
+
+ Login = new FormGroup({
+   logins: new FormControl('asdas', [Validators.required,   Validators.pattern('[1-5]*')]),
+   pass: new FormControl('asdas', [Validators.required, Validators.minLength(2)])
+ })
+
+ get logins(){
+   return this.Login.get('logins')
+ }
+
+ getform(){
+   console.log(this.Login.value)
+ }
+
+ seter(par:any){
+  this.Login.patchValue({
+    logins:par
+  })
+ }
 
 }

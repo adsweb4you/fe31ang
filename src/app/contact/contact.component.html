@@ -10,7 +10,7 @@
 
 *ngIf="title.invalid"
 
->{{title}}</small>-->
+>{{title}}</small>
 
 <input type="text" placeholder="ტექსტი" class="form-control mb-3" minlength="16" required   [formControl]="myname" >
 
@@ -35,5 +35,16 @@
  <button class="btn btn-info" > გაგზავნა</button>
  <button class="btn btn-warning" (click)="nwfield()"> ველების შევსება</button>
 </form> 
+-->
 
+<form action="" [formGroup]="Login" (ngSubmit)="getform()">
+
+    <input type="text" class="form-control mb-3" formControlName="logins"  >
+    <small class="text-danger" *ngIf="logins?.invalid">ვალიდაცია ვერ გაიარა</small>
+
+    <input type="text" class="form-control mb-3" formControlName="pass">
+   
+    <button class="btn btn-primary" [disabled]='Login.invalid'>გაგზავნა</button>
+    <button class="btn btn-info"  (click)="seter('121212')">შეტანა</button>
+</form>
  
